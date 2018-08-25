@@ -25,13 +25,13 @@ def sec():
     except:
         dosya_label['text'] = "Hata oluştu"
 
-def calistir():
+def calistir_f():
     hos_label['text'] = "...Taranıyor..."
     
 
     def calis():
-        a = time.time()
-        key = 'Virustotal API key'
+        fir = time.time()
+        key = '632117c49009620b3ef099b1bf3d78f89223cb5fb26cdde4eb53df971dd48623'
         params = {'apikey': key}
         file_name = dos_ad(path)
         files = {'file': (file_name, open(path, 'rb'))}
@@ -59,7 +59,7 @@ def calistir():
                 continue
         if (a == 0):
              b = time.time()
-             sonuc_ekran.insert(INSERT,"Nothing detected. \n It took {}".format(b-a))
+             sonuc_ekran.insert(INSERT,"Nothing detected. \n It took second {}".format(int(b-fir)))
         hos_label['text'] = "Tarama bitti"
         
     t1 = Thread(target = calis)
@@ -81,8 +81,10 @@ dosya_label.place(relx = "0.02",rely = "0.17")
 dosya_buton = Button(pencere,text = "Taranacak dosya seç ",command = sec,fg = "yellow",bg = "dark green")
 dosya_buton.place(relx = "0.18",rely = "0.15",relheight = "0.1",relwidth = "0.2")
 
-calistir = Button(pencere,text = "Calistir",bg = "lime green",fg = "goldenrod1",command = calistir)
+calistir = Button(pencere,text = "Calistir",bg = "lime green",fg = "goldenrod1",command = calistir_f)
 calistir.place(relx = "0.18",rely = "0.4",relheight = "0.1",relwidth = "0.2")
+pencere.bind("<Return>",calistir_f)
+
 
 calis_lab = Label(text = "Tıkla",fg = "gray13",bg = "lime green",font = "Verdana 8 bold",activeforeground = "red4",activebackground= "cyan4")
 calis_lab.place(relx = "0.02",rely = "0.43",relwidth = "0.14")
