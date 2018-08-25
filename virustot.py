@@ -31,7 +31,7 @@ def calistir_f():
 
     def calis():
         fir = time.time()
-        key = '632117c49009620b3ef099b1bf3d78f89223cb5fb26cdde4eb53df971dd48623'
+        key = 'Your VT Api Key'
         params = {'apikey': key}
         file_name = dos_ad(path)
         files = {'file': (file_name, open(path, 'rb'))}
